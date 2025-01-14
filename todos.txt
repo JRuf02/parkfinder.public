@@ -1,0 +1,62 @@
+Du kannst den API-Schlüssel und die Client-ID sicher in Umgebungsvariablen oder durch Server-seitige API-Anfragen speichern, wenn du sicherstellen möchtest, dass diese nicht im Frontend-Code sichtbar sind.
+
+Drinking water
+Free Parking
+Haltestellen: Copy Name to clipboard button, Button der DB Navigator mit der starthaltestelle öffnet
+Toilets
+
+Common CSS Breakpoints
+    For Mobile Devices – 320px — 480px.
+    iPads and Tablets – 481px — 768px.
+    Laptops and small screen – 769px — 1024px.
+    Large screens and Desktops – 1025px — 1200px.
+    TV and Extra Large Screens – 1201px and more.
+
+
+========================= relevant ab hier =================================================
+
+
+________________________________________WEB APP______________________________________________
+
+TODO:
+
+Anforderungen nochmal lesen
+
+
+Mobile: 
+    Landscape mode!
+
+    .leaflet-contextmenu a.leaflet-contextmenu-item {
+        padding: 4px 12px;
+    }
+
+Allgemein:
+    burgermenu icon oben rechts auf Karte anzeigen
+
+    popup gap zwischen name und distance adden für lange names
+
+    sidebar designen: 
+        Doppelpunkte alignen...
+        Button um alle tags aufklappen zu lassen für einen Eintrag in Liste
+
+Code Quality:
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> downloaden und lokal einbinden!
+
+
+
+
+
+Neue Funktionen:
+
+Button für neue "Suche um aktuellen Standort"
+Button "Standort aktualisieren"
+-> "jetzt aktualisieren": Aktualisiert ein mal
+-> "automatisch neu laden"
+    -> alle x Sekunden (Slider, Wert zwischen 0.5 und 10, voreinstellung=1)
+    -> starten (nur klickbar wenn autorefresh deaktiviert ist, startet autorefresh)
+    -> stoppen (nur klickbar wenn autorefresh aktiviert ist, stoppt autorefresh)
+
+Zusatzfunktionen:
+    parking_space: car_sharing   (OPTION adden)
+    wheelchair: yes
+    Parkplatz merken (Sternicon sowohl in Popup als auch Liste togglebar), Filteroption "nur Favoriten zeigen"

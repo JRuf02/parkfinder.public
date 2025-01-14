@@ -1,0 +1,80 @@
+/* Notebooks, desktop and big tablets use the main style*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Small button bar */
+#top-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: auto;
+    position: relative;
+    background-color: #1F2E53;
+}
+
+/* Button */
+#toggle-sidebar {
+    width: 49%;
+    padding: 5px 10px;
+    border: none;
+    background-color: #1F2E53;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#toggle-sidebar:hover {
+    background-color: #263968;
+}
+
+/* Button */
+#toggle-menu {
+    width: 49%;
+    padding: 5px 10px;
+    border: none;
+    background-color: #1F2E53;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#toggle-menu:hover {
+    background-color: #263968;
+}
+
+/* Main container; for the map and the sidebar menus */
+#map-container {
+    display: flex;
+    height: 95%;
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+}
+
+/* The map itself */
+#map {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    flex-grow: 1;
+}
+
+/* Desaturate the map background */
+.leaflet-tile-pane {
+    filter: saturate(50%);
+}
+
+/* Needed for hiding the menus */
+.hidden {
+    display: none;
+}
