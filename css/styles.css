@@ -3,7 +3,7 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100dvh;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
