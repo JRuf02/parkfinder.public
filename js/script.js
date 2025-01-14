@@ -36,6 +36,7 @@ function showMap(position) {
     if (isMobile()) {
         toggleSidebar();
         toggleMenu();
+        window.scrollTo(0, 1);
     }
 
     userLocation = {
