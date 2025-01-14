@@ -1,20 +1,19 @@
 #loading-screen {
-    background-color: #140F2D;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 20;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    align-items: center;
-    justify-content: center;
+  background-color: #140f2d;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
 }
 
 #loading-screen span {
-    color: white;
-    font-size: 2em;
-
+  color: white;
+  font-size: 2em;
 }

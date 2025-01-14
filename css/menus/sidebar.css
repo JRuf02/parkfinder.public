@@ -1,39 +1,38 @@
 #sidebar {
-    position: absolute;
-    box-sizing: border-box;
-    width: 15em;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    overflow-y: auto;
-    background-color: rgba(20, 15, 45, 0.5);
-    padding: 10px;
-    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
-    display: block;
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
+  position: absolute;
+  box-sizing: border-box;
+  width: 15em;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  overflow-y: auto;
+  background-color: rgba(20, 15, 45, 0.5);
+  padding: 10px;
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 .parking-item {
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #EEE;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #eee;
 }
 
 .parking-item:hover {
-    -webkit-box-shadow: 0px 0px 11px 2px #FFFFFF; 
-    box-shadow: 0px 0px 11px 2px #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px 2px #ffffff;
+  box-shadow: 0px 0px 11px 2px #ffffff;
 }
 
 .parking-item-selected {
-    -webkit-box-shadow: 0px 0px 11px 2px #FFFFFF; 
-    box-shadow: 0px 0px 11px 2px #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px 2px #ffffff;
+  box-shadow: 0px 0px 11px 2px #ffffff;
 }
 
-
 #sidebar.hidden {
-    transform: translateX(100%)
+  transform: translateX(100%);
 }

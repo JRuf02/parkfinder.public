@@ -1,51 +1,47 @@
-
 #menu {
-    position: absolute;
-    align-items: center;
-    color: white;
-    width: 15em;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    overflow-y: auto;
-    background-color: rgba(20, 15, 45, 0.75);
-    padding: 10px;
-    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    transform: translateX(0);
-    transition: transform 0.3s ease-in-out;
-    max-height: 100%; /* Set the maximum height for the scrollable area */
+  position: absolute;
+  align-items: center;
+  color: white;
+  width: 15em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  overflow-y: auto;
+  background-color: rgba(20, 15, 45, 0.75);
+  padding: 10px;
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  max-height: 100%; /* Set the maximum height for the scrollable area */
 }
 
 #menu.hidden {
-    transform: translateX(-100%)
+  transform: translateX(-100%);
 }
-
-
 
 .filter-container {
-    max-height: 100%; /* Set the maximum height for the scrollable area */
-    min-height: 60px;
-    overflow-y: auto;  /* Enable vertical scrolling */
-    padding: 10px;     /* Optional padding */
+  max-height: 100%; /* Set the maximum height for the scrollable area */
+  min-height: 60px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px; /* Optional padding */
 }
 
-
 .filter-item {
-    display: flex;             /* Use flexbox for alignment */
-    align-items: center;       /* Vertically align checkbox and text */
-    gap: 8px;                  /* Add spacing between checkbox and label text */
-    margin-bottom: 5px;        /* Add space below each item */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align checkbox and text */
+  gap: 8px; /* Add spacing between checkbox and label text */
+  margin-bottom: 5px; /* Add space below each item */
 }
 
 .filter-item span {
-    text-align: left;
+  text-align: left;
 }
 
 .filter-item input {
-    margin: 0;                 /* Entfernt den Standardabstand der Checkbox */
-    accent-color: #845632;
+  margin: 0; /* Entfernt den Standardabstand der Checkbox */
+  accent-color: #845632;
 }

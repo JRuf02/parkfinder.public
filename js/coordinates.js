@@ -2,26 +2,30 @@
 
 // Convert from degrees to radians
 function degreesToRadians(degrees) {
-    var radians = (degrees * Math.PI)/180;
-    return radians;
-  }
+  var radians = (degrees * Math.PI) / 180;
+  return radians;
+}
 
 // Function takes two objects, that contain coordinates to a starting and destination location.
-function calcDistance (startCoords, destCoords){
-    let startingLat = degreesToRadians(startCoords.latitude);
-    let startingLong = degreesToRadians(startCoords.longitude);
-    let destinationLat = degreesToRadians(destCoords.latitude);
-    let destinationLong = degreesToRadians(destCoords.longitude);
-  
-    // Radius of the earth in kilometers
-    let radius = 6571;
-  
-    // Haversine equation
-    let distanceInKilometers = Math.acos(Math.sin(startingLat) * Math.sin(destinationLat) +
-    Math.cos(startingLat) * Math.cos(destinationLat) *
-    Math.cos(startingLong - destinationLong)) * radius;
+function calcDistance(startCoords, destCoords) {
+  let startingLat = degreesToRadians(startCoords.latitude);
+  let startingLong = degreesToRadians(startCoords.longitude);
+  let destinationLat = degreesToRadians(destCoords.latitude);
+  let destinationLong = degreesToRadians(destCoords.longitude);
 
-    return distanceInKilometers;
+  // Radius of the earth in kilometers
+  let radius = 6571;
+
+  // Haversine equation
+  let distanceInKilometers =
+    Math.acos(
+      Math.sin(startingLat) * Math.sin(destinationLat) +
+        Math.cos(startingLat) *
+          Math.cos(destinationLat) *
+          Math.cos(startingLong - destinationLong)
+    ) * radius;
+
+  return distanceInKilometers;
 }
 
 // Usage

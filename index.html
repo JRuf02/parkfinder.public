@@ -1,71 +1,144 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ParkFinder</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/loading-screen/loading-spinner.css">
-    <link rel="stylesheet" href="css/loading-screen/loading-screen.css">
-    <link rel="stylesheet" href="css/menus/filter-menu.css">
-    <link rel="stylesheet" href="css/menus/sidebar.css">
-    <link rel="stylesheet" href="css/screen-sizes/small-screen.css">
-    <link rel="stylesheet" href="css/popups/map-popup.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="css/context-menu/leaflet.contextmenu.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/loading-screen/loading-spinner.css" />
+    <link rel="stylesheet" href="css/loading-screen/loading-screen.css" />
+    <link rel="stylesheet" href="css/menus/filter-menu.css" />
+    <link rel="stylesheet" href="css/menus/sidebar.css" />
+    <link rel="stylesheet" href="css/screen-sizes/small-screen.css" />
+    <link rel="stylesheet" href="css/popups/map-popup.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="css/context-menu/leaflet.contextmenu.css" />
 
-    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-</head>
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png" />
+  </head>
 
+  <body>
+    <div id="loading-screen">
+      <span class="loader"></span>
+      <span>loading</span>
+    </div>
 
-<body>
+    <div id="top-container">
+      <button id="toggle-menu" onclick="toggleMenu()">
+        Optionen verbergen
+      </button>
+      <button id="toggle-sidebar" onclick="toggleSidebar()">
+        Liste verbergen
+      </button>
+    </div>
 
-<div id="loading-screen">
-    <span class="loader"></span>
-    <span>loading</span>
-</div>
-
-<div id="top-container">
-    <button id="toggle-menu" onclick="toggleMenu()">Optionen verbergen</button>
-    <button id="toggle-sidebar" onclick="toggleSidebar()">Liste verbergen</button> 
-</div>
-
-<div id="map-container">
-    <div id="map"></div>
-    <div id="menu">
+    <div id="map-container">
+      <div id="map"></div>
+      <div id="menu">
         <div class="filter-container">
-            <label class="filter-item"><input type="checkbox" id="filter-free" checked onchange="updateParking()"> <span>Kostenlos</span></label>
-            <label class="filter-item"><input type="checkbox" id="filter-customers" checked onchange="updateParking()"> <span>Kunden</span></label>
-            <label class="filter-item"><input type="checkbox" id="filter-paid-customers" unchecked onchange="updateParking()"> <span>Kunden (kostenpflichtig)</span></label>
-            <label class="filter-item"><input type="checkbox" id="filter-paid" checked onchange="updateParking()"> <span>Kostenpflichtig</span></label>
-            <label class="filter-item"><input type="checkbox" id="filter-permissive" checked onchange="updateParking()"> <span>Bedingt</span></label>
-            <label class="filter-item"><input type="checkbox" id="filter-private" unchecked onchange="updateParking()"> <span>Privat</span></label>
-            <label class="filter-item"><input type="checkbox" id="filter-residents" unchecked onchange="updateParking()"> <span>Anwohner</span></label>
-            <label class="filter-item"><input type="checkbox" id="filter-other" checked onchange="updateParking()"> <span>Sonstige</span></label>
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-free"
+              checked
+              onchange="updateParking()"
+            />
+            <span>Kostenlos</span></label
+          >
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-customers"
+              checked
+              onchange="updateParking()"
+            />
+            <span>Kunden</span></label
+          >
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-paid-customers"
+              unchecked
+              onchange="updateParking()"
+            />
+            <span>Kunden (kostenpflichtig)</span></label
+          >
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-paid"
+              checked
+              onchange="updateParking()"
+            />
+            <span>Kostenpflichtig</span></label
+          >
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-permissive"
+              checked
+              onchange="updateParking()"
+            />
+            <span>Bedingt</span></label
+          >
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-private"
+              unchecked
+              onchange="updateParking()"
+            />
+            <span>Privat</span></label
+          >
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-residents"
+              unchecked
+              onchange="updateParking()"
+            />
+            <span>Anwohner</span></label
+          >
+          <label class="filter-item"
+            ><input
+              type="checkbox"
+              id="filter-other"
+              checked
+              onchange="updateParking()"
+            />
+            <span>Sonstige</span></label
+          >
         </div>
-        <div style="text-align: center; margin-top: 10px;">
-            <label for="radius-slider">
-            <input type="range" id="radius-slider" min="0.50" max="7" value="1.00" step="0.25" 
-                   onchange="updateRadius()" oninput="showRadiusValue()" />
-                   <div>Suchradius: <span id="radius-value">1.00</span> km</div>
-            </label>
+        <div style="text-align: center; margin-top: 10px">
+          <label for="radius-slider">
+            <input
+              type="range"
+              id="radius-slider"
+              min="0.50"
+              max="7"
+              value="1.00"
+              step="0.25"
+              onchange="updateRadius()"
+              oninput="showRadiusValue()"
+            />
+            <div>Suchradius: <span id="radius-value">1.00</span> km</div>
+          </label>
         </div>
-    </div>
-    <div id="sidebar">
+      </div>
+      <div id="sidebar">
         <div id="parking-list"></div>
+      </div>
     </div>
-</div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/leaflet.contextmenu.js"></script>
-<script src="js/L.Donut.js"></script>
-<script src="js/coordinates.js"></script>
-<script src="js/colors.js"></script>
-<script src="js/sidebar.js"></script>
-<script src="js/menu.js"></script>
-<script src="js/script.js"></script>
-<script src="js/map-popup.js"></script>
-
-</body>
+    <script src="js/leaflet-1.9.4.min.js"></script>
+    <script src="js/leaflet.contextmenu.js"></script>
+    <script src="js/L.Donut.js"></script>
+    <script src="js/coordinates.js"></script>
+    <script src="js/colors.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/map-popup.js"></script>
+  </body>
 </html>

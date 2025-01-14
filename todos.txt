@@ -18,17 +18,9 @@ Common CSS Breakpoints
 
 ________________________________________WEB APP______________________________________________
 
-TODO:
+Ideen:
 
-Anforderungen nochmal lesen
-
-
-Mobile: 
-    Landscape mode!
-
-    .leaflet-contextmenu a.leaflet-contextmenu-item {
-        padding: 4px 12px;
-    }
+script.js splitten, globale Variablen entfernen
 
 Allgemein:
     burgermenu icon oben rechts auf Karte anzeigen
@@ -38,13 +30,6 @@ Allgemein:
     sidebar designen: 
         Doppelpunkte alignen...
         Button um alle tags aufklappen zu lassen für einen Eintrag in Liste
-
-Code Quality:
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> downloaden und lokal einbinden!
-
-
-
-
 
 Neue Funktionen:
 
@@ -60,3 +45,5 @@ Zusatzfunktionen:
     parking_space: car_sharing   (OPTION adden)
     wheelchair: yes
     Parkplatz merken (Sternicon sowohl in Popup als auch Liste togglebar), Filteroption "nur Favoriten zeigen"
+
+Mobile landscape mode detecten und browser adressleiste ausblenden.
