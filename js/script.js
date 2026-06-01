@@ -36,25 +36,25 @@ function showLocationError(error) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
       warning +=
-        "Der Standort ihres Geräts ist nicht aktiviert oder der Zugriff wurde verweigert.\n";
+        "Dein Standort ist nicht aktiviert oder der Zugriff wurde verweigert.\n";
       break;
     case error.POSITION_UNAVAILABLE:
       warning +=
-        "Standort nicht gefunden: Die Standortinformationen sind nicht verfügbar.\n";
+        "Standort nicht gefunden.\n";
       break;
     case error.TIMEOUT:
       warning +=
-        "Timeout: Die Standortermittlung konnte nicht schnell genug abgeschlossen werden.\n";
+        "Die Standortermittlung konnte nicht schnell genug abgeschlossen werden.\n";
       break;
     default:
       warning += "Standort nicht gefunden.\n";
       break;
   }
   if (isMobile()) {
-    warning += "Wählen Sie ihren gewünschten Standort durch Halten der Karte.";
+    warning += "\nWähle deinen gewünschten Standort durch langes Drücken auf die Karte.";
   } else {
     warning +=
-      "Wählen Sie ihren gewünschten Standort durch Rechtsklick auf die Karte.";
+      "\nWähle deinen gewünschten Standort durch Rechtsklick auf die Karte.";
   }
   // Show warning popup
   alert(warning);
@@ -152,7 +152,7 @@ async function loadParking(lat, lng) {
     parkingData = data.elements;
   } catch (error) {
     console.error("Fehler beim Laden der Parkplatzdaten:", error);
-    alert("Parkplatzdaten konnten nicht geladen werden.");
+    alert("Parkplatzdaten konnten nicht geladen werden.\n\nVerändere den Suchradius oder lade die Seite neu!");
   }
   try {
     updateParking();
