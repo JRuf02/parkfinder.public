@@ -32,6 +32,8 @@ Drive wherever you want to go without worries and let ParkFinder do its magic on
 ## Screenshots
 Can be found in ./screenshots. Have a look!
 
+## Try it out!
+https://jruf02.github.io/parkfinder.public/
 
 ## Author
 Julian Gabriel Ruf,
