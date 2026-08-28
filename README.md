@@ -38,4 +38,4 @@ https://jruf02.github.io/parkfinder.public/
 ## Author
 Julian Gabriel Ruf,
 
-For the WS24/25 MoCIoT lecture at KIT.
+For the WS24/25 MoCIoT course at KIT.
